@@ -81,61 +81,6 @@ def scan(vp):
     return marks
 
 
-# unfinished, not working
-def make_csv(vp, marks):
-    # one entry per day
-    days = [["Tag", "Generelle Information"]]
-    for idx_day, day in enumerate(vp):
-        # one line
-        classes = [[], []]
-
-        # getting information for rows
-        for idx, line in enumerate(day):
-            # saving day
-            if marks[idx_day][idx] == "new_day":
-                classes[0] = line[8:]
-                continue
-
-            # saving general information
-            if marks[idx_day][idx] == "text":
-                classes[1].append(line[7:])
-                continue
-
-            if marks[idx_day][idx] == "pressure":
-                continue
-
-            if marks[idx_day][idx] == "blank":
-                continue
-
-            if marks[idx_day][idx] == "undefined":
-                continue
-
-            # saving information for classes
-            if marks[idx_day][idx] not in days[0]:
-                # creating row if it is not yet existent
-                days[0].append(marks[idx_day][idx])
-                classes.append([line[7:]])
-            else:
-                # adding new information if the row already exists
-                classes[-1].append(line[7:])
-
-        # classes[1] = "| ".join(classes[1])
-
-        for row_idx, row in enumerate(classes):
-            classes[row_idx] = "| ".join(classes[row_idx])
-
-        days.append(classes)
-
-    for i in days:
-        print(i)
-
-    # writing data to csv file
-    with open("vp.csv", "w", newline='', encoding='utf-8') as csv_file:
-        writer = csv.writer(csv_file, delimiter=';')
-        for line in days:
-            writer.writerow(line)
-
-
 # getting vps and splitting at linebreaks
 vp_0 = requests.get("https://ohggf.de/idesk/plan/public.php/VP%20Heute/035f713a4c761e16/").text.split("\n")
 vp_1 = requests.get("https://ohggf.de/idesk/plan/public.php/VP%20Morgen/d56b8a9e33fd56ec/").text.split("\n")
