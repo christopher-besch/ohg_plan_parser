@@ -1,5 +1,4 @@
 import requests
-import csv
 
 
 # function to create a list (marks) with the content of every line, every item corresponds to a line with the same index
@@ -87,7 +86,7 @@ vp_1 = requests.get("https://ohggf.de/idesk/plan/public.php/VP%20Morgen/d56b8a9e
 # deleting first linebreaks
 del vp_0[0]
 del vp_1[0]
-# combining those two list
+# combining those two lists
 vp = vp_0 + vp_1
 
 vp_marks = scan(vp)
