@@ -17,6 +17,8 @@ def get_raw():
     # cutting vp at day breaks into vp_cut
     day_start = 0
     day_end = 0
+    # date of every day
+    days_date = []
     for idx, line in enumerate(vp):
         # finding line with the day the vp is made for = start of new day
         if "Ausfertigung" in line:
@@ -24,17 +26,20 @@ def get_raw():
             day_start = day_end
             # noting index the end of the current day
             day_end = idx
+            # append date of current day
+            days_date.append(line)
 
             # cutting lists at day starts and ends if the day has some content
             if not day_end == day_start:
-                days.append(vp[day_start:day_end])
+                days.append({
+                    "text": vp[day_start:day_end],
+                    "date": days_date[-2]
+                })
 
     # adding the last day, which starts at the end of the second last day
-    days.append(vp[day_end:])
+    days.append({
+        "text": vp[day_end:],
+        "date": days_date[-1]
+    })
 
-    for day in days:
-        for line in day:
-            print(line)
-        print()
-        print()
-        print()
+    return days
