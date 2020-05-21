@@ -26,20 +26,16 @@ class TestGetRaw(unittest.TestCase):
 
             self.test_plans.append(this_entry)
 
-    # test many pairs
+    # test one file
     def test_from_single_file(self):
         for plan in self.test_plans:
             # test from one pair
             result = plan_parser.get_raw((plan["raw"]))
-            required_result = json.loads(plan["converted_raw"])
+            required_result = [json.loads(plan["converted_raw"])]
 
             self.assertEqual(required_result, result)
 
-    def from_multiple_files(self, chosen_ones):
-        result = plan_parser.get_raw(("".join([chosen_one["raw"] for chosen_one in chosen_ones])))
-
-        self.assertEqual("".join([chosen_one["raw"] for chosen_one in chosen_ones]), result)
-
+    # test multiple pairs
     def test_from_multiple_files(self):
         number_tests = 0
         for amount in range(2, len(self.test_plans) + 1):
@@ -53,3 +49,15 @@ class TestGetRaw(unittest.TestCase):
                 number_tests += 1
                 if number_tests >= 10:
                     return
+
+    def test_empty(self):
+        result = plan_parser.get_raw("")
+        required_result = []
+
+        self.assertEqual(required_result, result)
+
+    def test_garbage(self):
+        result = plan_parser.get_raw("UZASGFJGgasuizfg UZGADZUIGZFUG\nhafzuigzu\n")
+        required_result = []
+
+        self.assertEqual(required_result, result)
