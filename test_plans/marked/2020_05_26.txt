@@ -1,0 +1,29 @@
+[
+	[
+		"new_day",
+		"blank",
+		"pressure",
+		"blank",
+		"text",
+		"text",
+		"blank",
+		"blank",
+		"class_name",
+		"9.4",
+		"class_name",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"12",
+		"blank",
+		"blank"
+	]
+]

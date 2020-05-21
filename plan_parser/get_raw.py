@@ -2,11 +2,13 @@ import requests
 
 
 # find location of the search phrase in the plan
-def find_start(vp):
+def find_start(vp, ignored_lines=None):
+    if ignored_lines is None:
+        ignored_lines = {}
+
     match = None
     for idx, line in enumerate(vp):
-        # skipp the first line as it it is obvious that it contains a start -> no infinite loop
-        if idx <= 0:
+        if idx in ignored_lines:
             continue
         if "Ausfertigung" in line:
             match = idx
@@ -39,7 +41,8 @@ def get_raw(vp_raw=None):
     # last found search phrase, first line contains it already
     last_date = vp[0]
     while True:
-        match = find_start(vp)
+        # skip the first line as it it is obvious that it contains a start -> no infinite loop
+        match = find_start(vp, ignored_lines={0})
 
         if match is not None:
             # save the last day, ends right before the current line
