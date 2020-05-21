@@ -7,7 +7,7 @@ days = get_raw()
 groups = ["6.4",
           "Jahrgang 6"]
 
-# going threw every day
+# going through every day
 for day in days:
     # extract valuable data
     intel = get_intel(day["text"], groups)

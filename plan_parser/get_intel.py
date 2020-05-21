@@ -77,6 +77,7 @@ def scan(vp):
     return marks
 
 
+# return dictionary with intel for this day
 def get_intel(day, groups):
     intel = {
         # new day info
@@ -92,9 +93,9 @@ def get_intel(day, groups):
     # scan plan
     marks = scan(day)
 
-    # going threw every day
+    # going through every day
     for idx, line in enumerate(day):
-        # extract intel
+        # extract intel from already marked lines
         if marks[idx] == "new_day":
             intel["new_day"] = day[idx][8:]
 
