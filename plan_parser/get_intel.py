@@ -65,13 +65,13 @@ def scan(vp):
             continue
 
         # default (something is not right)
-        marks.append("undefined")
+        marks.append("blank")
 
     # postprocessing
     for idx, mark in enumerate(marks):
         # replacing text_start and text_end marks with text marks
         # every possible class name at this point:
-        # text; new_day; pressure; blank; undefined (only when something goes wrong); class_name; [class name]
+        # text; new_day; pressure; blank; class_name; [class name]
         if mark == "text_start" or mark == "text_end":
             marks[idx] = "text"
     return marks
