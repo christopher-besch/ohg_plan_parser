@@ -1,0 +1,1 @@
+[{"new_day": "Dienstag 26.5.   2.Ausfertigung", "pressure": "Drucktermin: 20.05.2020 18:39:19 Uhr", "text": ["Jahrgang 12: Unterricht f\u00fcr die rote Gruppe", "Jahrg\u00e4nge 9/10/11: Unterricht f\u00fcr die gr\u00fcne Gruppe"], "groups_intel": []}]

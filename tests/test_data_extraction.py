@@ -6,7 +6,6 @@ import json
 
 
 class TestGetRaw(unittest.TestCase):
-
     test_plans = []
 
     def setUp(self):
@@ -65,7 +64,6 @@ class TestGetRaw(unittest.TestCase):
 
 
 class TestFindStart(unittest.TestCase):
-
     raw_test_plans = {}
 
     def setUp(self):
@@ -77,7 +75,6 @@ class TestFindStart(unittest.TestCase):
 
     def test_2018_08_09(self):
         result = plan_parser.find_start(self.raw_test_plans["2018_08_09.txt"].split("\n"))
-        print(result)
         required_result = 1
         self.assertEqual(required_result, result)
 
@@ -88,20 +85,18 @@ class TestFindStart(unittest.TestCase):
 
 
 class TestScan(unittest.TestCase):
-
     test_plans = []
 
     def setUp(self):
         # getting plan pairs
         for entry in os.listdir("../test_plans/marked"):
             this_entry = {}
-            # cut at day breaks
             with open(os.path.join("../test_plans/converted_raw", entry), "r", encoding="utf-8") as file:
                 this_entry["converted_raw"] = file.read()
 
             # marked
             with open(os.path.join("../test_plans/marked", entry), "r", encoding="utf-8") as file:
-                this_entry["intel"] = file.read()
+                this_entry["marked"] = file.read()
 
             self.test_plans.append(this_entry)
 
@@ -111,6 +106,38 @@ class TestScan(unittest.TestCase):
             result = []
             for day in json.loads(plan["converted_raw"]):
                 result.append(plan_parser.scan(day["text"]))
+            required_result = json.loads(plan["marked"])
+
+            self.assertEqual(required_result, result)
+
+
+class TestGetIntel(unittest.TestCase):
+    test_plans = []
+
+    def setUp(self):
+        # getting plan pairs
+        for entry in os.listdir("../test_plans/intel_6_4"):
+            this_entry = {}
+            # cut at day breaks
+            with open(os.path.join("../test_plans/converted_raw", entry), "r", encoding="utf-8") as file:
+                this_entry["converted_raw"] = file.read()
+
+            # intel
+            with open(os.path.join("../test_plans/intel_6_4", entry), "r", encoding="utf-8") as file:
+                this_entry["intel"] = file.read()
+
+            self.test_plans.append(this_entry)
+
+    def test_from_single_file(self):
+        # groups the user is a part of
+        groups = ["6.4",
+                  "Jahrgang 6"]
+
+        for plan in self.test_plans:
+            # test each day from one pair
+            result = []
+            for day in json.loads(plan["converted_raw"]):
+                result.append(plan_parser.get_intel(day["text"], groups))
             required_result = json.loads(plan["intel"])
 
             self.assertEqual(required_result, result)

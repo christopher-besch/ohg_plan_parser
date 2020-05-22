@@ -3,5 +3,18 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/test_plans/converted_raw/2020_05_25.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/converted_raw/2020_05_26.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2018_08_09.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2018_08_10.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2018_08_13.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2018_08_14.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2019_01_18.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2020_05_25.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2020_05_25.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2020_05_26.txt" />
+    <file url="file://$PROJECT_DIR$/test_plans/raw/2020_05_26.txt" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8" project-jdk-type="Python SDK" />
 </project>

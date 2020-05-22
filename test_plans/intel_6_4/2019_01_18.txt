@@ -1,0 +1,1 @@
+[{"new_day": "Freitag 18.1.   5.Ausfertigung", "pressure": "Drucktermin: 18.01.2019 07:50:10 Uhr", "text": [], "groups_intel": ["1.Std. Rt Rel entf\u00e4llt", "2.Std. Rt Rel --> Vertretung: Sc [O5]", "5.Std. Rd Ge entf\u00e4llt"]}]
