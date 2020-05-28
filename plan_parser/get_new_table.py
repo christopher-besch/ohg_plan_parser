@@ -2,13 +2,15 @@ import re
 import datetime
 
 
+# saving the changes made by the plan for a single period and any "old" data, that always applies
 class Change:
-    def __init__(self, line, weekday, year, school=True, period=None, teacher=None, subject=None, room=None):
+    def __init__(self, line, weekday, year, group=None, school=True, period=None, teacher=None, subject=None, room=None):
         self.line = line
         self.weekday = weekday % 7
         self.school = school
         self.year = year
 
+        self.group = group
         self.period = period
         self.teacher = teacher
         self.subject = subject
@@ -45,7 +47,7 @@ class Change:
         match = re.search(r"(\d+)\.? *Std\. *(\w+) +(\w+) *-->.+Vertretung: +(\w+) *\[(\w+)\]", self.line)
         if match:
             # save old intel
-            self.old = Change(None, self.weekday, self.year,
+            self.old = Change(None, self.weekday, self.year, group=self.group,
                               period=match.group(1),
                               teacher=match.group(2),
                               subject=match.group(3))
@@ -64,7 +66,7 @@ class Change:
         # when there is a "Raumplanänderung"
         if match:
             # since there is only a location change, every other intel always applies
-            self.old = Change(None, self.weekday, self.year,
+            self.old = Change(None, self.weekday, self.year, group=self.group,
                               period=match.group(1),
                               teacher=match.group(2),
                               subject=match.group(3))
@@ -83,7 +85,7 @@ class Change:
         # when there is a "Raumplanänderung"
         if match:
             # save old data
-            self.old = Change(None, self.weekday, self.year,
+            self.old = Change(None, self.weekday, self.year, group=self.group,
                               period=match.group(1),
                               teacher=match.group(2),
                               subject=match.group(3))
@@ -112,7 +114,7 @@ class Change:
         # when there is a "statt"
         if match:
             # since there is only a location change, every other intel always applies
-            self.old = Change(None, self.weekday, self.year,
+            self.old = Change(None, self.weekday, self.year, group=self.group,
                               teacher=match.group(2),
                               subject=match.group(3),
                               room=match.group(4))
@@ -140,7 +142,7 @@ class Change:
         # when there is a "statt"
         if match:
             # since there is only a location change, every other intel always applies
-            self.old = Change(None, self.weekday, self.year,
+            self.old = Change(None, self.weekday, self.year, group=self.group,
                               period=match.group(1),
                               teacher=match.group(2),
                               subject=match.group(3))
@@ -161,10 +163,18 @@ class Change:
             5: "Saturday",
             6: "Sunday"
         }
+
+        # return known values only
+        text = f"Change"
+
+        if self.group is not None:
+            text += f" for {self.group}"
+
         if self.school:
-            text = f"Change: On a {weekdays[self.weekday]}"
+            text += f": On a {weekdays[self.weekday]}"
         else:
-            text = f"Change: Nothing on a {weekdays[self.weekday]}"
+            text += f": Nothing on a {weekdays[self.weekday]}"
+
         if self.period is not None:
             text += f" in period {self.period}"
         if self.subject is not None:
