@@ -1,10 +1,12 @@
 import requests
+import re
+import datetime
 
 
 # find location of the search phrase in the plan
 def find_start(vp, ignored_lines=None):
     if ignored_lines is None:
-        ignored_lines = {}
+        ignored_lines = set()
 
     match = None
     for idx, line in enumerate(vp):
@@ -17,7 +19,7 @@ def find_start(vp, ignored_lines=None):
     return match
 
 
-def get_raw(vp_raw=None):
+def get_raw(vp_raw=None, year=None):
     # either use given text or download the current one
     if vp_raw is None:
         # getting vps and splitting at linebreaks
@@ -48,7 +50,7 @@ def get_raw(vp_raw=None):
             # save the last day, ends right before the current line
             days.append({
                 "text": vp[:match],
-                "date": last_date
+                "date": get_date(last_date, year)
                 })
             # save date for the next day
             last_date = vp[match]
@@ -58,8 +60,20 @@ def get_raw(vp_raw=None):
         else:
             days.append({
                 "text": vp,
-                "date": last_date
+                "date": get_date(last_date, year)
             })
             break
 
     return days
+
+
+# extract the day form the line
+def get_date(date_line, year):
+    if year is None:
+        year = datetime.datetime.now().year
+
+    match = re.search(r"\| *\w+ *(\d+)\. *(\d+)", date_line)
+    date = datetime.date(year, int(match.group(2)), int(match.group(1)))
+
+    # return converted to string
+    return str(date)

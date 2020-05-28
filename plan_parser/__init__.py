@@ -11,4 +11,4 @@ from plan_parser.get_intel import get_intel, scan
 from plan_parser.get_intel import scan
 
 # get new table with applied changes from plan
-from plan_parser.get_new_table import get_new_table
+from plan_parser.get_new_table import get_new_table, Change

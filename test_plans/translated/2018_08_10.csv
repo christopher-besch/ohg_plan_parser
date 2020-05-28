@@ -1,75 +1,75 @@
-      |  2.Std. Swi D O1 statt Do 9.8.;
-      |  3.Std. Swi D O1;
-      |  4.Std. Swi D O1;
-      |  6.Std. Swi D O1;
-      |  1.Std. Smr M entfällt;
-      |  3.Std. Smr Ku O4;
-      |  4.Std. Smr M O4;
-      |  5.Std. Smr Ku O4 - Raumplanänderung!;
-      |  6.Std. Smr Ku O4;
-      |  4.Std. Mx M O12 statt Do 9.8./3.Std.;
-      |  5.Std. Mx M O12 statt Do 9.8./4.Std.;
-      |  6.Std. Mx M O12;
-      |  1.Std. Te Ku entfällt;
-      |  2.Std. De Vf N10;
-      |  3.Std. De Vf N10 statt Do 9.8./6.Std.;
-      |  5.Std. De Vf N10 statt Do 9.8./2.Std.;
-      |  6.Std. De Vf N10;
-      |  1.Std. Nf Rel entfällt;
-      |  2.Std. Nf Rel --> Vertretung: Sab [S1];
-      |  3.Std. Dk Ge O7;
-      |  5.Std. Rt Mu --> Vertretung: Jh [O7];
-      |  3.Std. Pät E O5 statt Do 9.8./2.Std.;
-      |  6.Std. Smr Ku entfällt;
-      |  1.Std. Nf Rel entfällt;
-      |  1.Std. Rt Rel entfällt;
-      |  2.Std. Nf Rel --> Vertretung: Sab [S1];
-      |  2.Std. Rt Rel --> Vertretung: Sc [O5];
-      |  1.Std. Rt Rel entfällt;
-      |  2.Std. Rt Rel --> Vertretung: Sc [O5];
-      |  6.Std. Hn Ek entfällt;
-      |  1.Std. Mi Mu entfällt;
-      |  2.Std. Mi Mu --> Vertretung: Go [N5];
-      |  6.Std. Nik M entfällt;
-      |  4.Std. Gl M O10;
-      |  5.Std. Nf eR entfällt;
-      |  6.Std. Nf eR entfällt;
-      |  5.Std. Nf eR entfällt;
-      |  6.Std. Nf eR entfällt;
-      |  4.Std. Wn Ph PH;
-      |  5.Std. Mi eR entfällt;
-      |  6.Std. Mi eR entfällt;
-      |  5.Std. Mi eR entfällt;
-      |  6.Std. Mi eR entfällt;
-      |  5.Std. Bt kR entfällt;
-      |  5.Std. Hu WN entfällt;
-      |  6.Std. Bt kR entfällt;
-      |  6.Std. Hu WN entfällt;
-      |  6.Std. Swi Pol entfällt;
-      |  7.Std. Swi Pol entfällt;
-      |  3.Std. Sö D N13;
-      |  4.Std. St Pbi N13;
-      |  5.Std. Dt Mu entfällt;
-      |  6.Std. Dt Mu entfällt;
-      |  1.Std. Ka F entfällt;
-      |  1.Std. Mx M entfällt;
-      |  2.Std. De E entfällt;
-      |  1.Std. Dt Mu entfällt;
-      |  1.Std. Ks Ph entfällt;
-      |  2.Std. Ks Ph PH statt 1.Std.;
-      |  1.Std. Ks Ph PH statt 2.Std.;
-      |  2.Std. Oto Bi BÜ1 statt 1.Std.;
-      |  5.Std. Ch WPF entfällt;
-      |  6.Std. Ch WPF entfällt;
-      |  1.Std. Pt E N11 - Raumplanänderung!;
-      |  1.Std. Ch Ge entfällt;
-      |  2.Std. Pt E N11 - Raumplanänderung!;
-      |  2.Std. Ch Ge entfällt;
-      |  3.Std. Fr kR W3 - Raumplanänderung!;
-      |  3.Std. Rd WN W1 - Raumplanänderung!;
-      |  3.Std. Hu Pi entfällt;
-      |  3.Std. Nf eR entfällt;
-      |  4.Std. Fr kR W3 - Raumplanänderung!;
-      |  4.Std. Rd WN W1 - Raumplanänderung!;
-      |  4.Std. Hu Pi entfällt;
-      |  4.Std. Nf eR entfällt;
+      |  2.Std. Swi D O1 statt Do 9.8.;"<Change: On a Friday in period 2 D at Swi in O1; instead of <Change: On a Thursday D at Swi in O1>>"
+      |  3.Std. Swi D O1;<Change: On a Friday in period 3 D at Swi in O1>
+      |  4.Std. Swi D O1;<Change: On a Friday in period 4 D at Swi in O1>
+      |  6.Std. Swi D O1;<Change: On a Friday in period 6 D at Swi in O1>
+      |  1.Std. Smr M entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 M at Smr>>"
+      |  3.Std. Smr Ku O4;<Change: On a Friday in period 3 Ku at Smr in O4>
+      |  4.Std. Smr M O4;<Change: On a Friday in period 4 M at Smr in O4>
+      |  5.Std. Smr Ku O4 - Raumplanänderung!;"<Change: On a Friday in period 5 Ku at Smr in O4; instead of <Change: On a Friday in period 5 Ku at Smr>>"
+      |  6.Std. Smr Ku O4;<Change: On a Friday in period 6 Ku at Smr in O4>
+      |  4.Std. Mx M O12 statt Do 9.8./3.Std.;"<Change: On a Friday in period 4 M at Mx in O12; instead of <Change: On a Thursday in period 3 M at Mx in O12>>"
+      |  5.Std. Mx M O12 statt Do 9.8./4.Std.;"<Change: On a Friday in period 5 M at Mx in O12; instead of <Change: On a Thursday in period 4 M at Mx in O12>>"
+      |  6.Std. Mx M O12;<Change: On a Friday in period 6 M at Mx in O12>
+      |  1.Std. Te Ku entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Ku at Te>>"
+      |  2.Std. De Vf N10;<Change: On a Friday in period 2 Vf at De in N10>
+      |  3.Std. De Vf N10 statt Do 9.8./6.Std.;"<Change: On a Friday in period 3 Vf at De in N10; instead of <Change: On a Thursday in period 6 Vf at De in N10>>"
+      |  5.Std. De Vf N10 statt Do 9.8./2.Std.;"<Change: On a Friday in period 5 Vf at De in N10; instead of <Change: On a Thursday in period 2 Vf at De in N10>>"
+      |  6.Std. De Vf N10;<Change: On a Friday in period 6 Vf at De in N10>
+      |  1.Std. Nf Rel entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Rel at Nf>>"
+      |  2.Std. Nf Rel --> Vertretung: Sab [S1];"<Change: On a Friday in period 2 Rel at Sab in S1; instead of <Change: On a Friday in period 2 Rel at Nf>>"
+      |  3.Std. Dk Ge O7;<Change: On a Friday in period 3 Ge at Dk in O7>
+      |  5.Std. Rt Mu --> Vertretung: Jh [O7];"<Change: On a Friday in period 5 Mu at Jh in O7; instead of <Change: On a Friday in period 5 Mu at Rt>>"
+      |  3.Std. Pät E O5 statt Do 9.8./2.Std.;"<Change: On a Friday in period 3 E at Pät in O5; instead of <Change: On a Thursday in period 2 E at Pät in O5>>"
+      |  6.Std. Smr Ku entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 Ku at Smr>>"
+      |  1.Std. Nf Rel entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Rel at Nf>>"
+      |  1.Std. Rt Rel entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Rel at Rt>>"
+      |  2.Std. Nf Rel --> Vertretung: Sab [S1];"<Change: On a Friday in period 2 Rel at Sab in S1; instead of <Change: On a Friday in period 2 Rel at Nf>>"
+      |  2.Std. Rt Rel --> Vertretung: Sc [O5];"<Change: On a Friday in period 2 Rel at Sc in O5; instead of <Change: On a Friday in period 2 Rel at Rt>>"
+      |  1.Std. Rt Rel entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Rel at Rt>>"
+      |  2.Std. Rt Rel --> Vertretung: Sc [O5];"<Change: On a Friday in period 2 Rel at Sc in O5; instead of <Change: On a Friday in period 2 Rel at Rt>>"
+      |  6.Std. Hn Ek entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 Ek at Hn>>"
+      |  1.Std. Mi Mu entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Mu at Mi>>"
+      |  2.Std. Mi Mu --> Vertretung: Go [N5];"<Change: On a Friday in period 2 Mu at Go in N5; instead of <Change: On a Friday in period 2 Mu at Mi>>"
+      |  6.Std. Nik M entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 M at Nik>>"
+      |  4.Std. Gl M O10;<Change: On a Friday in period 4 M at Gl in O10>
+      |  5.Std. Nf eR entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 eR at Nf>>"
+      |  6.Std. Nf eR entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 eR at Nf>>"
+      |  5.Std. Nf eR entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 eR at Nf>>"
+      |  6.Std. Nf eR entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 eR at Nf>>"
+      |  4.Std. Wn Ph PH;<Change: On a Friday in period 4 Ph at Wn in PH>
+      |  5.Std. Mi eR entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 eR at Mi>>"
+      |  6.Std. Mi eR entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 eR at Mi>>"
+      |  5.Std. Mi eR entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 eR at Mi>>"
+      |  6.Std. Mi eR entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 eR at Mi>>"
+      |  5.Std. Bt kR entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 kR at Bt>>"
+      |  5.Std. Hu WN entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 WN at Hu>>"
+      |  6.Std. Bt kR entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 kR at Bt>>"
+      |  6.Std. Hu WN entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 WN at Hu>>"
+      |  6.Std. Swi Pol entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 Pol at Swi>>"
+      |  7.Std. Swi Pol entfällt;"<Change: Nothing on a Friday in period 7; instead of <Change: On a Friday in period 7 Pol at Swi>>"
+      |  3.Std. Sö D N13;<Change: On a Friday in period 3 D at Sö in N13>
+      |  4.Std. St Pbi N13;<Change: On a Friday in period 4 Pbi at St in N13>
+      |  5.Std. Dt Mu entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 Mu at Dt>>"
+      |  6.Std. Dt Mu entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 Mu at Dt>>"
+      |  1.Std. Ka F entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 F at Ka>>"
+      |  1.Std. Mx M entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 M at Mx>>"
+      |  2.Std. De E entfällt;"<Change: Nothing on a Friday in period 2; instead of <Change: On a Friday in period 2 E at De>>"
+      |  1.Std. Dt Mu entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Mu at Dt>>"
+      |  1.Std. Ks Ph entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Ph at Ks>>"
+      |  2.Std. Ks Ph PH statt 1.Std.;"<Change: On a Friday in period 2 Ph at Ks in PH; instead of <Change: On a Friday in period 1 Ph at Ks in PH>>"
+      |  1.Std. Ks Ph PH statt 2.Std.;"<Change: On a Friday in period 1 Ph at Ks in PH; instead of <Change: On a Friday in period 2 Ph at Ks in PH>>"
+      |  2.Std. Oto Bi BÜ1 statt 1.Std.;"<Change: On a Friday in period 2 Bi at Oto in BÜ1; instead of <Change: On a Friday in period 1 Bi at Oto in BÜ1>>"
+      |  5.Std. Ch WPF entfällt;"<Change: Nothing on a Friday in period 5; instead of <Change: On a Friday in period 5 WPF at Ch>>"
+      |  6.Std. Ch WPF entfällt;"<Change: Nothing on a Friday in period 6; instead of <Change: On a Friday in period 6 WPF at Ch>>"
+      |  1.Std. Pt E N11 - Raumplanänderung!;"<Change: On a Friday in period 1 E at Pt in N11; instead of <Change: On a Friday in period 1 E at Pt>>"
+      |  1.Std. Ch Ge entfällt;"<Change: Nothing on a Friday in period 1; instead of <Change: On a Friday in period 1 Ge at Ch>>"
+      |  2.Std. Pt E N11 - Raumplanänderung!;"<Change: On a Friday in period 2 E at Pt in N11; instead of <Change: On a Friday in period 2 E at Pt>>"
+      |  2.Std. Ch Ge entfällt;"<Change: Nothing on a Friday in period 2; instead of <Change: On a Friday in period 2 Ge at Ch>>"
+      |  3.Std. Fr kR W3 - Raumplanänderung!;"<Change: On a Friday in period 3 kR at Fr in W3; instead of <Change: On a Friday in period 3 kR at Fr>>"
+      |  3.Std. Rd WN W1 - Raumplanänderung!;"<Change: On a Friday in period 3 WN at Rd in W1; instead of <Change: On a Friday in period 3 WN at Rd>>"
+      |  3.Std. Hu Pi entfällt;"<Change: Nothing on a Friday in period 3; instead of <Change: On a Friday in period 3 Pi at Hu>>"
+      |  3.Std. Nf eR entfällt;"<Change: Nothing on a Friday in period 3; instead of <Change: On a Friday in period 3 eR at Nf>>"
+      |  4.Std. Fr kR W3 - Raumplanänderung!;"<Change: On a Friday in period 4 kR at Fr in W3; instead of <Change: On a Friday in period 4 kR at Fr>>"
+      |  4.Std. Rd WN W1 - Raumplanänderung!;"<Change: On a Friday in period 4 WN at Rd in W1; instead of <Change: On a Friday in period 4 WN at Rd>>"
+      |  4.Std. Hu Pi entfällt;"<Change: Nothing on a Friday in period 4; instead of <Change: On a Friday in period 4 Pi at Hu>>"
+      |  4.Std. Nf eR entfällt;"<Change: Nothing on a Friday in period 4; instead of <Change: On a Friday in period 4 eR at Nf>>"

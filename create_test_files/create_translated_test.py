@@ -1,8 +1,10 @@
-from plan_parser import scan
+from plan_parser import scan, Change
 import csv
 import sys
 import os
 import json
+import datetime
+import re
 
 if input("Are you sure you want to overwrite existing files?") != "yes":
     sys.exit()
@@ -18,8 +20,13 @@ for entry in os.listdir("../test_plans/converted_raw"):
     with open(final_file, "w", encoding="utf-8", newline="") as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL)
         for day in converted_raw:
+            weekday = datetime.date.fromisoformat(day["date"]).weekday()
+
             marked_day = scan(day["text"])
             for line, mark in zip(day["text"], marked_day):
+                # only with "normal" lines
                 if mark not in {"new_day", "blank", "pressure", "text", "class_name", }:
-                    csv_writer.writerow((line, ""))
 
+                    year_match = re.search(r"^(\d+)", entry)
+                    change_obj = Change(line, weekday, int(year_match.group(1)))
+                    csv_writer.writerow((line, str(change_obj)))
