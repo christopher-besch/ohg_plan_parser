@@ -10,7 +10,7 @@ from flask_moment import Moment
 from config import Config
 
 # global app object
-app = Flask(__name__)
+application = app = Flask(__name__)
 # config
 app.config.from_object(Config)
 # database
