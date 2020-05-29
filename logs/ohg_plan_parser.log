@@ -60,3 +60,4 @@ AttributeError: 'str' object has no attribute 'strftime'
 2020-05-29 08:31:40,906 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
 2020-05-29 08:31:45,375 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
 2020-05-29 08:31:50,641 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 11:39:55,440 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
