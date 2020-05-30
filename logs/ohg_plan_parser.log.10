@@ -1,0 +1,89 @@
+2020-05-28 20:58:19,026 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-28 21:05:10,006 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-28 21:05:30,990 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-28 21:05:37,917 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-28 21:05:52,715 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-28 21:06:12,197 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:30:18,307 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:30:25,338 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:30:33,979 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:31:08,823 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:31:29,366 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:32:23,953 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:33:00,490 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:47:31,566 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:47:40,718 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:47:52,627 ERROR: Exception on /get_intel [GET] [in c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\main\routes_main.py", line 44, in get_intel
+    lines_dict = get_intel(day_raw["text"], groups)
+TypeError: get_intel() takes 0 positional arguments but 2 were given
+2020-05-29 07:48:33,763 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:48:35,141 ERROR: Exception on /get_intel [GET] [in c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\main\routes_main.py", line 48, in get_intel
+    lines_dict = get_intel(day_raw["text"], groups)
+TypeError: get_intel() takes 0 positional arguments but 2 were given
+2020-05-29 07:49:59,968 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:50:01,748 ERROR: Exception on /get_intel [GET] [in c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\main\routes_main.py", line 48, in get_intel
+    lines_dict = plan_parser.get_intel(day_raw["text"], groups)
+  File "C:\Users\Stromel\Desktop\ohg_plan_parse_new\plan_parser\get_intel.py", line 108, in get_intel
+    elif marks[idx] in groups:
+TypeError: argument of type 'NoneType' is not iterable
+2020-05-29 07:50:19,636 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:50:27,002 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:50:28,074 ERROR: Exception on /get_intel [GET] [in c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\stromel\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2096, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-05-29 07:50:42,063 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:54:17,268 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:56:13,284 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 07:58:18,317 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 08:08:51,480 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]
+2020-05-29 08:10:05,200 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Desktop\ohg_plan_parse_new\app\__init__.py:56]

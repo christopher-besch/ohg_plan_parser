@@ -1,4 +1,4 @@
-2020-05-30 19:21:56,674 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+2020-05-30 11:23:11,203 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 162, in new_plan
-    return render_template("new_plan.html", name=name, days=days, plan=new_table, weekdays=weekdays)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 92, in new_plan
+    return render_template("new_plan.html", name=name, days=days, plan=zip(*plan_converted))
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 120, in _render
@@ -38,13 +38,11 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Stromel\Data\ohg_plan_parser\app\templates\base.html", line 46, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan.html", line 18, in block "app_content"
-    {% for period in range(1, len(day[0]) + 1) %}
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 452, in getitem
-    return obj[argument]
-jinja2.exceptions.UndefinedError: 'day' is undefined
-2020-05-30 19:22:29,531 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-30 19:22:30,734 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan.html", line 20, in block "app_content"
+    {% for period_idx, period in enumerate(plan) %}
+jinja2.exceptions.UndefinedError: 'enumerate' is undefined
+2020-05-30 16:20:01,089 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-30 16:20:39,089 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,8 +56,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 162, in new_plan
-    return render_template("new_plan.html", name=name, days=days, plan=new_table, weekdays=weekdays)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 92, in new_plan
+    return render_template("new_plan.html", name=name, days=days, plan=zip(*plan_converted))
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 120, in _render
@@ -84,10 +82,7 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Stromel\Data\ohg_plan_parser\app\templates\base.html", line 46, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan.html", line 18, in block "app_content"
-    {% for period in range(0, len(day[0])) %}
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 452, in getitem
-    return obj[argument]
-jinja2.exceptions.UndefinedError: 'day' is undefined
-2020-05-30 19:25:40,577 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-30 19:26:18,834 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan.html", line 20, in block "app_content"
+    {% for period_idx, period in enumerate(plan) %}
+jinja2.exceptions.UndefinedError: 'enumerate' is undefined
+2020-05-30 16:21:07,969 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+{% if name is not none %}
+<h2>Info für {{ name }}</h2>
+{% endif %}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th></th>
+        {% for day in plan %}
+        <th>{{ weekdays[day["date"].weekday()] }}<br>{{ day["date"].day }}. {{ day["date"].month }}. {{ day["date"].year }}</th>
+        {% endfor %}
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for period in periods %}
+    <tr>
+        <th>{{ period + 1 }}</th>
+        {% for day in plan %}
+        <th>
+            {% if day["table"][period].old is not none %}
+            <p style="background-color: #64c864">
+                {% if day["table"][period].old.school %}
+                <del>{{ day["table"][period].old.teacher }} {{ day["table"][period].old.subject }} {{ day["table"][period].old.room }}</del><br>
+                {% else %}
+                <del>Frei</del>
+                {% endif %}
+
+                {% if day["table"][period].school %}
+                {{ day["table"][period].teacher }} {{ day["table"][period].subject }} {{ day["table"][period].room }}
+                {% else %}
+                Entfall
+                {% endif %}
+            </p>
+
+            {% else %}
+
+            <p>
+            {% if day["table"][period].school %}
+            {{ day["table"][period].teacher }} {{ day["table"][period].subject }} {{ day["table"][period].room }}
+            {% else %}
+            Frei
+            {% endif %}
+            </p>
+
+            {% endif %}
+        </th>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% for day in plan %}
+{% if day["text"] != [] %}
+
+<h2>{{ day["date"].day }}. {{ day["date"].month }}. {{ day["date"].year }}</h2>
+
+{% for line in day["text"] %}
+<p>{{ line }}</p>
+{% endfor %}
+<br>
+{% for line in day["raw"] %}
+<p>{{ line }}</p>
+{% endfor %}
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+<script>
+</script>
+{% endblock %}}

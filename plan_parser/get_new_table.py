@@ -4,7 +4,8 @@ import datetime
 
 # saving the changes made by the plan for a single period and any "old" data, that always applies
 class Change:
-    def __init__(self, line, weekday, year, group=None, school=True, period=None, teacher=None, subject=None, room=None):
+    def __init__(self, line, weekday, year,
+                 group=None, school=True, period=None, teacher=None, subject=None, room=None):
         self.line = line
         self.weekday = weekday % 7
         self.school = school
@@ -37,7 +38,7 @@ class Change:
         # normal line
         match = re.search(r"(\d+)\.? *Std\. *(\w+) +(\w+) +(\w+)", self.line)
         if match:
-            self.period = match.group(1)
+            self.period = int(match.group(1))
             self.teacher = match.group(2)
             self.subject = match.group(3)
             self.room = match.group(4)
@@ -48,7 +49,7 @@ class Change:
         if match:
             # save old intel
             self.old = Change(None, self.weekday, self.year, group=self.group,
-                              period=match.group(1),
+                              period=int(match.group(1)),
                               teacher=match.group(2),
                               subject=match.group(3))
 
@@ -67,7 +68,7 @@ class Change:
         if match:
             # since there is only a location change, every other intel always applies
             self.old = Change(None, self.weekday, self.year, group=self.group,
-                              period=match.group(1),
+                              period=int(match.group(1)),
                               teacher=match.group(2),
                               subject=match.group(3))
 
@@ -86,7 +87,7 @@ class Change:
         if match:
             # save old data
             self.old = Change(None, self.weekday, self.year, group=self.group,
-                              period=match.group(1),
+                              period=int(match.group(1)),
                               teacher=match.group(2),
                               subject=match.group(3))
 
@@ -121,7 +122,7 @@ class Change:
 
             period_match = re.search(r"(\d+)\.? *Std\.", match.group(5))
             if period_match:
-                self.old.period = period_match.group(1)
+                self.old.period = int(period_match.group(1))
 
             weekday_match = re.search(r"(\d+)\.(\d+)", match.group(5))
             if weekday_match:
@@ -132,7 +133,7 @@ class Change:
             self.teacher = self.old.teacher
             self.subject = self.old.subject
             self.room = self.old.room
-            self.period = match.group(1)
+            self.period = int(match.group(1))
             return True
         return False
 
@@ -143,7 +144,7 @@ class Change:
         if match:
             # since there is only a location change, every other intel always applies
             self.old = Change(None, self.weekday, self.year, group=self.group,
-                              period=match.group(1),
+                              period=int(match.group(1)),
                               teacher=match.group(2),
                               subject=match.group(3))
 
@@ -152,6 +153,9 @@ class Change:
             self.school = False
             return True
         return False
+
+    def __bool__(self):
+        return self.school
 
     def __repr__(self):
         weekdays = {
@@ -189,8 +193,64 @@ class Change:
         return f"<{text}>"
 
 
-def get_new_table():
-    pass
+# turn list of list with something like "Sab_Spr_N4" into Change objects
+def create_change_objects(table):
+    # on entry per day
+    new_table = []
+    # amount of periods on the longest day in the week
+    max_len = 0
+    for weekday, day in enumerate(table):
+        # update max_len
+        if len(day) > max_len:
+            max_len = len(day)
+
+        # one entry per period or Change object
+        new_day = []
+        for period_idx, this_period in enumerate(day):
+            # save empty object
+            if this_period is None:
+                new_day.append(Change(None, int(weekday), datetime.date.today().year,
+                                      school=False, period=period_idx + 1))
+            else:
+                # each value is separated by "_"s
+                values = this_period.split("_")
+
+                # create object
+                new_day.append(Change(None, int(weekday), datetime.date.today().year,
+                                      period=period_idx + 1,
+                                      teacher=values[0],
+                                      subject=values[1],
+                                      room=values[2]))
+        new_table.append(new_day)
+
+    # adding padding so that every day has the same length
+    for weekday, day in enumerate(new_table):
+
+        # for each period between current length and required length
+        for period_idx in range(len(day), max_len):
+            # append empty object
+            day.append(Change(None, int(weekday), datetime.date.today().year,
+                       school=False, period=period_idx + 1))
+
+    return new_table
+
+
+# take a day and replace required periods with replacement from the "vertretungsplan"
+def apply_changes(day_old, changes):
+    day_new = []
+    for period in day_old:
+        # search for this period
+        for change in changes:
+            if period.period == change.period:
+                day_new.append(change)
+                # save "old" version
+                day_new[-1].old = period
+                break
+        # save old period instead if no change can be found
+        else:
+            day_new.append(period)
+
+    return day_new
 
 
 if __name__ == "__main__":
@@ -214,3 +274,4 @@ if __name__ == "__main__":
 
     test = Change("      |  5.Std. De E N12 statt Di 14.8./6.Std.", 3, 2018)
     print(test.line, test)
+    print()
