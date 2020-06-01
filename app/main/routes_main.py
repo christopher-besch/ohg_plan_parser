@@ -28,8 +28,11 @@ def before_request():
 @bp.route('/')
 @bp.route('/index')
 def index():
-    visitors = Visitors.query.filter_by(date=datetime.date.today()).first()
-    return render_template("index.html", visitors_today=visitors)
+    # visitors = Visitors.query.filter_by(date=datetime.date.today()).first()
+    # return render_template("index.html", visitors_today=visitors)
+
+    # redirect to url creation form
+    return redirect(url_for("main.new_plan_link_creator"))
 
 
 # create a personal link for new_plan()

@@ -141,7 +141,7 @@
                     alert("Die einzelnen Stunden müssen entweder leer bleiben oder in folgendem Format angegebn werden:\n\n" +
                         "Lehrer Fach Raum\n" +
                         "Beispiel: Swi Pol N4\n\n" +
-                        "Am " + weekday_names[day_idx] + " muss Stunde " + (cell_idx % 5 + 1) + " überarbeitet werden!")
+                        "Am " + weekday_names[day_idx] + " muss Stunde " + ((cell_idx - day_idx) / 5 + 1) + " überarbeitet werden!")
                     return false
                 }
                 weekdays[day_idx].push(cell_splitted.join("_"))
