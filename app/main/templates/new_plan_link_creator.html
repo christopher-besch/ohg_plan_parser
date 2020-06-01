@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+    <form name="main_form" onsubmit="return validateForm()">
+    {# name #}
+    <div class="form-group">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <input type="text" class="form-control" id="name" value="{{ name if name }}">
+    </div>
+
+    {# first group #}
+    <div class="form-group">
+        <label for="group_0" class="col-sm-2 col-form-label">Gruppen z.B. 10.1 und Jahrgang 10</label>
+        <input type="text" class="form-control" id="group_0" value="{{ groups[0] if groups[0] }}">
+    </div>
+
+    {# every other group #}
+    {# using a dictionary beacause you can't update "normal" variables with jinja #}
+    {% set idx = {"i": 1} %}
+    {% for group in groups[1:] %}
+        <div class="form-group">
+            <label for="group_{{ idx["i"] }}" class="col-sm-2 col-form-label"></label>
+            <input type="text" class="form-control" id="group_{{ idx["i"] }}" value="{{ group if group }}">
+        </div>
+        {% if idx.update({"i": idx["i"] + 1}) %}{% endif %}
+    {% endfor %}
+
+    {# plan table #}
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Montag</th>
+            <th>Dienstag</th>
+            <th>Mittwoch</th>
+            <th>Donnerstag</th>
+            <th>Freitag</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {# going through every period #}
+        {# using a dictionary beacause you can't update "normal" variables with jinja #}
+        {% set period_idx = {"i": 0} %}
+        {% for period in plan %}
+            <tr>
+                <th>{{ period_idx["i"] + 1 }}</th>
+
+                {# going through every day in this period #}
+                {# using a dictionary beacause you can't update "normal" variables with jinja #}
+                {% set day_idx = {"i": 0} %}
+                {% for day in period %}
+                    <th>
+                        <input type="text" class="form-control" id="day_{{ day_idx["i"] }}_period_{{ period_idx["i"] }}" value="{{ day|join(" ") if day }}">
+                    </th>
+                    {% if day_idx.update({"i": day_idx["i"] + 1}) %}{% endif %}
+                {% endfor %}
+
+            </tr>
+            {% if period_idx.update({"i": period_idx["i"] + 1}) %}{% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# buttons #}
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Speichern</button>
+        <a class="btn btn-danger" href="{{ url_for('main.new_plan_link_creator') }}" role="button">Einstellungen zurücksetzten</a>
+    </div>
+    </form>
+
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+<script>
+    "use strict";
+
+    function validateForm() {
+        let weekday_names = [
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag"
+        ]
+
+        // get form
+        let form = Array.from(document.forms["main_form"])
+
+        // get name and remove leading, trailing and double whitespaces
+        let name = form[0].value.trim().replace(/\s\s+/g, ' ')
+
+        // get groups
+        let groups_raw = form.slice(1, {{ groups|length + 2 }})
+        let groups = []
+        for (let group_idx = 0; group_idx < groups_raw.length; group_idx++) {
+            if (groups_raw[group_idx].value !== "") {
+                groups.push(groups_raw[group_idx].value)
+            }
+        }
+        // test if at least one group is given
+        if (groups.length < 1) {
+            alert("Es muss mindestens eine Gruppe angegeben werden!")
+            return false
+        }
+        // convert to string and remove leading, trailing and double whitespaces
+        groups = groups.join(";").trim().replace(/\s\s+/g, ' ')
+
+        // plan
+        let plan_raw = form.slice({{ groups|length + 1 }}, -1)
+        // when the amount of cells isn't dividable by 5
+        if (plan_raw.length % 5 !== 0) {
+            alert("A client-side internal Error has occurred, please contact the system administrator! (Error-Code #001)")
+            return false
+        }
+        // list with one entry per weekday with every period on that day
+        let weekdays = [[], [], [], [], []]
+        // going through every cell
+        for (let cell_idx = 0; cell_idx < plan_raw.length; cell_idx++) {
+            // get index of the current day
+            let day_idx = Number(plan_raw[cell_idx].id[4])
+            if (!(day_idx >= 0 && day_idx <= 5)) {
+                alert("A client-side internal Error has occurred, please contact the system administrator! (Error-Code #002)")
+                return false
+            }
+            // remove leading, trailing and double whitespaces
+            let cell = plan_raw[cell_idx].value.trim().replace(/\s\s+/g, ' ')
+
+            // when the cell is empty
+            if (cell === "") {
+                weekdays[day_idx].push(cell)
+            }else {
+                // cell splitted at white spaces
+                let cell_splitted = cell.split(" ")
+                // when there aren't three parts
+                if (cell_splitted.length !== 3) {
+                    alert("Die einzelnen Stunden müssen entweder leer bleiben oder in folgendem Format angegebn werden:\n\n" +
+                        "Lehrer Fach Raum\n" +
+                        "Beispiel: Swi Pol N4\n\n" +
+                        "Am " + weekday_names[day_idx] + " muss Stunde " + (cell_idx % 5 + 1) + " überarbeitet werden!")
+                    return false
+                }
+                weekdays[day_idx].push(cell_splitted.join("_"))
+            }
+        }
+
+        // remove every empty entry at the end of each day and convert day arrays to strings
+        let weekdays_array = []
+        for (let weekday_idx = 0; weekday_idx < weekdays.length; weekday_idx++) {
+            // as long as the current end is ""
+            while (weekdays[weekday_idx][weekdays[weekday_idx].length - 1] === "") {
+                weekdays[weekday_idx].pop()
+            }
+
+            // convert to string
+            weekdays_array.push(weekdays[weekday_idx].join("|"))
+        }
+        // last convert to string
+        let weekdays_string = weekdays_array.join(";")
+
+        // finally create url
+        let url = "{{ url_for('main.new_plan') }}?name=" + name + "&groups=" + groups + "&plan=" + weekdays_string
+
+        // debug
+        console.log(name)
+        console.log(groups)
+        console.log(weekdays_string)
+        console.log(url)
+
+        // remove accident prevention lock with blank function
+        window.onbeforeunload = function() {}
+        // redirect when everything went successful
+        window.location.replace(url)
+        return false
+    }
+
+    // keep user from accidentally leaving the page and deleting any filled cells
+    window.onbeforeunload = function() {
+        return ""
+    }
+</script>
+{% endblock %}}

@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block navbar %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -50,4 +52,7 @@
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    <script>
+    "use strict";
+    </script>
 {% endblock %}

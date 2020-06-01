@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+    <p>Die in die URL integrierten Variablen sind nicht nutzbar. Eine nutzbare URL kann <a href="{{ url_for("main.new_plan_link_creator") }}">hier</a> erstellt werden.</p>
+    <p>Die URL ist relativ lang, bist du sicher, dass du den ganzen Link ausgewählt / kopiert hast?</p>
+
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+<script>
+</script>
+{% endblock %}}

@@ -1,0 +1,106 @@
+2020-06-01 15:12:01,743 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 133, in new_plan_link_creator
+    return render_template("new_plan_link_creator.html", groups=groups, name=name, plan=list(zip(*plan)))
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_link_creator.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 26, in block "body"
+    {% block scripts %}
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_link_creator.html", line 162, in block "scripts"
+    let url = {{ url_for('new_plan') }}
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'new_plan'. Did you mean 'main.new_plan' instead?
+2020-06-01 15:12:11,620 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:12:34,505 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:28:31,364 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:31:14,516 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:31:42,593 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:33:13,019 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:34:19,657 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:35:21,231 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:39:38,844 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:39:54,366 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:41:18,466 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:42:16,438 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:43:44,747 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:48:06,100 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:49:08,928 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:53:32,705 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:54:06,305 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 15:56:47,690 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:10:44,733 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:10:53,042 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 107, in new_plan
+    groups = request.args.get("groups").split(";")
+AttributeError: 'NoneType' object has no attribute 'split'
+2020-06-01 16:14:07,238 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:14:07,880 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 120, in new_plan
+    if len(plan_days) != 5 or not groups or ok:
+UnboundLocalError: local variable 'plan_days' referenced before assignment
+2020-06-01 16:15:29,826 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]

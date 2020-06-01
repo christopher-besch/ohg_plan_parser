@@ -5,7 +5,6 @@ from app import db
 from app.main import bp
 from app.models import Visitors
 import plan_parser
-import json
 
 
 # save last seen time
@@ -33,57 +32,131 @@ def index():
     return render_template("index.html", visitors_today=visitors)
 
 
-# get intel for named groups
-@bp.route("/get_intel")
-def get_intel():
-    # final object with requested data
-    days = []
-
-    groups = request.args.get("groups").split(";")
+# create a personal link for new_plan()
+@bp.route("/new_plan_link_creator")
+def new_plan_link_creator():
+    # get groups
+    groups = request.args.get("groups")
+    if groups is not None:
+        groups = groups.split(";")
+        # add padding
+        groups += [None] * (7 - len(groups))
+    else:
+        groups = [None] * 7
+    # get name
     name = request.args.get("name")
 
-    if groups is None:
-        return ""
+    plan_raw = request.args.get("plan")
+    # False when the plan is unusable
+    ok = True
+    # final original plan, one entry per day in each week
+    plan = []
+
+    if plan_raw is None or plan_raw.strip() == "":
+        ok = False
     else:
-        days_raw = plan_parser.get_raw()
-        for day_raw in days_raw:
-            lines_dict = plan_parser.get_intel(day_raw["text"], groups)
-            date = datetime.date.fromisoformat(day_raw["date"])
+        # cut at day breaks and period breaks -> two dimensional list
+        plan_days = [plan_day.split("|") for plan_day in plan_raw.split(";")]
 
-            days.append({
-                "date": date.isoformat(),
-                "text": lines_dict["text"],
-                "groups_intel": [],
-                "groups_intel_raw": []
-            })
+        # when there isn't one entry for each weekday
+        if len(plan_days) != 5:
+            ok = False
 
-            for line in lines_dict["groups_intel"]:
-                days[-1]["groups_intel_raw"].append(line)
+        # going through every weekday
+        for plan_day in plan_days:
+            # when there are no periods
+            if len(plan_day) <= 0:
+                ok = False
+                break
 
-                line_obj = plan_parser.Change(line, date.weekday(), date.year)
+            # one entry per period
+            day = []
+            for period in plan_day:
+                # empty messages are ok <- no school in this period
+                if period == "":
+                    day.append(None)
+                else:
+                    # when there is not enough info
+                    if len(period.split("_")) != 3:
+                        ok = False
+                        break
+                    day.append(period.split("_"))
 
-                days[-1]["groups_intel"].append({
-                    "period": line_obj.period,
-                    "room": line_obj.room,
-                    "teacher": line_obj.teacher,
-                    "subject": line_obj.subject
-                })
+            # add padding, so that each day has 10 periods
+            day += [None] * (10 - len(day))
 
-            days[-1]["groups_intel"] = sorted(days[-1]["groups_intel"], key=lambda entry: entry["period"])
+            # end the loop when an error has been found
+            if not ok:
+                break
+            # save this day
+            plan.append(day)
 
-        return render_template("get_intel.html", name=name, days=days)
+    # return list of Nones when the info is broken in any way
+    if not ok:
+        plan = [[None] * 10] * 5
+
+    # turn plan so that each entry contains one period of each day
+    return render_template("new_plan_link_creator.html", groups=groups, name=name, plan=list(zip(*plan)))
 
 
 # get new plan for named groups
 @bp.route("/new_plan")
 def new_plan():
-    # get variables from request
-    groups = request.args.get("groups").split(";")
-    name = request.args.get("name")
-    # this is json btw
-    plan = request.args.get("plan")
-    if groups is None or plan is None:
-        return ""
+
+    ################################
+    # extract and verify variables #
+    ################################
+
+    # False when the supplied values don't make sense
+    ok = True
+
+    # get variables
+    groups_raw = request.args.get("groups")
+    plan_days_raw = request.args.get("plan")
+    # test if variables existent
+    if groups_raw is None or groups_raw.strip() == "" or \
+            plan_days_raw is None or plan_days_raw.strip() == "":
+        ok = False
+    else:
+        # get variables from request
+        groups = groups_raw.split(";")
+        name = request.args.get("name")
+        # cut at day breaks and period breaks -> two dimensional list
+        plan_days = [plan_day.split("|") for plan_day in plan_days_raw.split(";")]
+
+        # final original plan, one entry per day in each week
+        plan = []
+        # when there isn't one entry for each day in the week or the groups data is faulty
+        if len(plan_days) != 5 or not groups:
+            ok = False
+        else:
+            for plan_day in plan_days:
+                # when there are no periods
+                if len(plan_day) <= 0:
+                    ok = False
+                    break
+
+                # on entry per period
+                day = []
+                for period in plan_day:
+                    # empty messages are ok <- no school in this period
+                    if period == "":
+                        day.append(None)
+                    else:
+                        # when there is not enough info
+                        if len(period.split("_")) != 3:
+                            ok = False
+                            break
+                        day.append(period)
+
+                # end the loop when an error has been found
+                if not ok:
+                    break
+                # save this day
+                plan.append(day)
+
+    if not ok:
+        return render_template("new_plan_faulty_url.html")
 
     ##########################
     # get intel for each day #
@@ -92,6 +165,7 @@ def new_plan():
     # get dict with text and date of each day
     days_raw = plan_parser.get_raw()
 
+    # last day from the "Vertretungsplan"
     last_day = datetime.date.fromisoformat(days_raw[0]["date"])
     days = []
     for day_raw in days_raw:
@@ -124,7 +198,7 @@ def new_plan():
     #####################
 
     # create Change objects representing the normal plan
-    plan_old = plan_parser.create_change_objects(json.loads(plan))
+    plan_old = plan_parser.create_change_objects(plan)
 
     # table that is actually being displayed on the website
     new_table = []
@@ -165,8 +239,9 @@ def new_plan():
                 "table": plan_old[current_day.weekday()]
             })
 
-        # stop when at least two days have been done and every day from the "Vertretungsplan" is done
-        if current_day >= last_day:
+        # stop when every day from the "Vertretungsplan" is done and each weekday is shown at least once
+        used_weekdays = {day["date"].weekday() for day in new_table}
+        if current_day >= last_day and len(used_weekdays) >= 5:
             break
 
     # list of every german weekday (excluding weekends)
@@ -180,7 +255,10 @@ def new_plan():
 
     # finally render
     return render_template("new_plan.html",
+                           groups=", ".join(groups),
+                           groups_raw=request.args.get("groups"),
                            name=name,
                            plan=new_table,
+                           plan_raw=request.args.get("plan"),
                            weekdays=weekdays,
                            periods=range(0, len(new_table[0]["table"])))
