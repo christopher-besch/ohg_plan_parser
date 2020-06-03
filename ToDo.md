@@ -7,4 +7,4 @@
 - [ ] better `address`
 - [ ] `SSL`
 - [x] wrong `t` besides Speichern
-- [ ] add `times` to period numbers
+- [x] add `times` to period numbers
