@@ -21,7 +21,11 @@
         <tbody>
         {% for period in periods %}
             <tr>
-                <th>{{ period + 1 }}</th>
+                <th>
+                    {{ period + 1 }}
+                    <br>
+                    {{ times[period][0] }} - {{ times[period][1] }}
+                </th>
                 {% for day in plan %}
                     <th>
                         {% if day["table"][period].old is not none %}

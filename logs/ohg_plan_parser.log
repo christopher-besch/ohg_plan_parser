@@ -74,3 +74,5 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'new_plan_link_cre
 2020-06-03 06:48:16,315 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
 2020-06-03 06:49:11,901 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
 2020-06-03 06:49:43,241 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 18:07:38,876 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 18:08:55,490 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]

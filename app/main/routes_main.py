@@ -258,6 +258,20 @@ def new_plan():
         "Freitag"
     ]
 
+    # list with the times of each period
+    times = [
+        ("07:50", "08:40"),
+        ("08:45", "09:35"),
+        ("09:40", "10:30"),
+        ("10:35", "11:25"),
+        ("11:30", "12:20"),
+        ("12:25", "13:15"),
+        ("13:20", "14:10"),
+        ("14:15", "15:05"),
+        ("15:10", "16:00"),
+        ("16:00", "16:50"),
+    ]
+
     # finally render
     return render_template("new_plan.html",
                            groups=", ".join(groups),
@@ -266,4 +280,5 @@ def new_plan():
                            plan=new_table,
                            plan_raw=request.args.get("plan"),
                            weekdays=weekdays,
-                           periods=range(0, len(new_table[0]["table"])))
+                           periods=range(0, len(new_table[0]["table"])),
+                           times=times)
