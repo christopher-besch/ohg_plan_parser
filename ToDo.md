@@ -6,3 +6,6 @@
 - [ ] help in settings / tutorial
 - [ ] better address
 - [ ] SSL
+- [ ] wrong t besides speichern
+- [ ] add times to period numbers
+- [ ] 
