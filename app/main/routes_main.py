@@ -193,6 +193,7 @@ def new_plan():
             "date": date,
             "text": lines_dict["text"],
             "groups_intel_raw": lines_dict["groups_intel"],
+            "pressure": lines_dict["pressure"],
             "group_changes": period_changes
         })
 
@@ -226,6 +227,7 @@ def new_plan():
                     # copy data from day dictionary
                     "text": day["text"],
                     "raw": day["groups_intel_raw"],
+                    "pressure": day["pressure"],
                     "date": current_day,
                     # overwrite "old" periods
                     "table": plan_parser.apply_changes(plan_old[current_day.weekday()], day["group_changes"])

@@ -12,7 +12,8 @@
 
     {# first group #}
     <div class="form-group">
-        <label for="group_0" class="col-sm-2 col-form-label">Gruppen z.B. 10.1 und Jahrgang 10</label>
+        <label for="group_0" class="col-sm-2 col-form-label">Gruppen</label>
+        <p>z.B. 10.1 und Jahrgang 10</p>
         <input type="text" class="form-control" id="group_0" value="{{ groups[0] if groups[0] }}">
     </div>
 
@@ -28,6 +29,7 @@
     {% endfor %}
 
     {# plan table #}
+    <p>z.B. "Fr Inf Th1" ohne Anführungszeichen in jeder Zelle, in der nicht frei ist.</p>
     <table class="table">
         <thead>
         <tr>
