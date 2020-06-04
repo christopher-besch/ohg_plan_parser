@@ -2,9 +2,10 @@
 - [ ] Change `function` to `update` Change instance with data from the "Vertretungsplan"
 - [ ] `index` page
 - [ ] better `faulty` url page
-- [ ] url in `GitHub`
+- [x] url in `GitHub`
 - [ ] `help` in settings / tutorial
 - [ ] better `address`
 - [ ] `SSL`
 - [x] delete `login`
 - [x] `mark` free periods
+- [ ] add GitHub `link`
