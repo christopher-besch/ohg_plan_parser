@@ -1,0 +1,114 @@
+2020-05-31 12:09:39,786 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:09:26,222 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:14:35,973 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:17:07,572 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:24:53,969 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:24:56,617 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
+    plan_old = plan_parser.create_change_objects(plan)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
+    values = this_period.split("_")
+AttributeError: 'list' object has no attribute 'split'
+2020-05-31 13:25:27,120 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:25:27,864 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
+    plan_old = plan_parser.create_change_objects(plan)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
+    values = this_period.split("_")
+AttributeError: 'list' object has no attribute 'split'
+2020-05-31 13:25:32,558 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
+    plan_old = plan_parser.create_change_objects(plan)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
+    values = this_period.split("_")
+AttributeError: 'list' object has no attribute 'split'
+2020-05-31 13:25:53,050 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:28:06,425 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 13:28:06,996 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
+    plan_old = plan_parser.create_change_objects(plan)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
+    values = this_period.split("_")
+AttributeError: 'list' object has no attribute 'split'
+2020-05-31 13:29:06,783 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 15:42:18,174 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 15:56:05,295 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 15:56:31,745 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 15:57:19,925 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 18:34:39,806 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 18:34:59,666 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 79, in new_plan_link_creator
+    groups = request.args.get("groups").split(";")
+AttributeError: 'NoneType' object has no attribute 'split'
+2020-05-31 18:36:54,436 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-05-31 18:38:25,041 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:32:48,444 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:33:31,200 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:45:23,566 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:46:26,419 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:49:04,296 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]

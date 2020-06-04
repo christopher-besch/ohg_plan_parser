@@ -27,7 +27,13 @@
                     {{ times[period][0] }} - {{ times[period][1] }}
                 </th>
                 {% for day in plan %}
+                    {# border if the period is free #}
+                    {% if day["table"][period].school %}
                     <th>
+                    {% else %}
+                    <th style="border: 3px solid #ff6432;">
+                    {% endif %}
+
                         {% if day["table"][period].old is not none %}
                             <p style="background-color: #64c864">
                                 {% if day["table"][period].old.school %}

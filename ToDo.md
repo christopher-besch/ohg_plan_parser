@@ -6,5 +6,5 @@
 - [ ] `help` in settings / tutorial
 - [ ] better `address`
 - [ ] `SSL`
-- [x] wrong `t` besides Speichern
-- [x] add `times` to period numbers
+- [x] delete `login`
+- [x] `mark` free periods

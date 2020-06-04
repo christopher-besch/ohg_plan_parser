@@ -23,10 +23,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
                         {# login #}
-                        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                        {# <li><a href="{{ url_for('auth.login') }}">Login</a></li>  #}
                     {% else %}
                         {# logout #}
-                        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                        {# <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>  #}
                     {% endif %}
                 </ul>
             </div>

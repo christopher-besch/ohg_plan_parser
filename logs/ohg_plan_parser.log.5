@@ -1,9 +1,6 @@
-2020-05-31 12:09:39,786 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:09:26,222 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:14:35,973 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:17:07,572 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:24:53,969 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:24:56,617 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+2020-06-01 07:51:27,470 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:51:38,796 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:51:56,569 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,98 +14,86 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
-    plan_old = plan_parser.create_change_objects(plan)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
-    values = this_period.split("_")
-AttributeError: 'list' object has no attribute 'split'
-2020-05-31 13:25:27,120 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:25:27,864 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
-    plan_old = plan_parser.create_change_objects(plan)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
-    values = this_period.split("_")
-AttributeError: 'list' object has no attribute 'split'
-2020-05-31 13:25:32,558 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
-    plan_old = plan_parser.create_change_objects(plan)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
-    values = this_period.split("_")
-AttributeError: 'list' object has no attribute 'split'
-2020-05-31 13:25:53,050 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:28:06,425 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 13:28:06,996 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 168, in new_plan
-    plan_old = plan_parser.create_change_objects(plan)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\plan_parser\get_new_table.py", line 216, in create_change_objects
-    values = this_period.split("_")
-AttributeError: 'list' object has no attribute 'split'
-2020-05-31 13:29:06,783 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 15:42:18,174 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 15:56:05,295 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 15:56:31,745 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 15:57:19,925 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 18:34:39,806 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 18:34:59,666 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 79, in new_plan_link_creator
-    groups = request.args.get("groups").split(";")
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 88, in new_plan_link_creator
+    plan_days = [plan_day.split("|") for plan_day in request.args.get("plan").split(";")]
 AttributeError: 'NoneType' object has no attribute 'split'
-2020-05-31 18:36:54,436 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-05-31 18:38:25,041 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 07:32:48,444 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 07:33:31,200 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 07:45:23,566 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 07:46:26,419 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 07:49:04,296 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:54:01,500 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:54:58,607 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 07:57:17,226 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:00:18,025 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:00:18,955 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 133, in new_plan_link_creator
+    return render_template("new_plan_link_creator.html", groups=groups, name=name, plan=plan)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_link_creator.html", line 28, in template
+    {% idx = 0 %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'idx'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2020-06-01 08:00:39,168 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:00:39,768 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 133, in new_plan_link_creator
+    return render_template("new_plan_link_creator.html", groups=groups, name=name, plan=plan)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_link_creator.html", line 28, in template
+    {% var idx = 0 %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'var'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2020-06-01 08:00:59,451 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:01:36,675 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:02:47,112 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:03:19,297 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 08:05:29,153 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
