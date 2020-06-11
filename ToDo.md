@@ -6,6 +6,4 @@
 - [ ] `help` in settings / tutorial
 - [ ] better `address`
 - [ ] `SSL`
-- [x] delete `login`
-- [x] `mark` free periods
-- [ ] add GitHub `link`
+- [x] week start date option

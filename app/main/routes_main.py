@@ -114,6 +114,7 @@ def new_plan():
     ok = True
 
     # get variables
+    start_mondays = True if request.args.get("start_mondays") == "true" else False
     groups_raw = request.args.get("groups")
     plan_days_raw = request.args.get("plan")
     # test if variables existent
@@ -208,6 +209,12 @@ def new_plan():
     new_table = []
     # day, one before the plan starts = today -> yesterday
     current_day = datetime.date.today() - datetime.timedelta(days=1)
+
+    # start at a monday (so current_day is a sunday) if required
+    while start_mondays and current_day.weekday() != 6:
+        # reduced by one day for as long as it isn't a monday
+        current_day -= datetime.timedelta(days=1)
+
     # amount of days with changes
     len_changed_days = 0
     while True:
