@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>
+		Programmatically passing URL parameters to IFrame using JavaScript
+	</title>
+</head>
+   
+<body>
+	<iframe id="myIframe" frameborder="0" marginwidth="0" marginheight="0" scrolling="YES" width="100%" height="100%"></iframe>
+</body>
+
+<script>
+	// get Iframe
+	let myIframe = document.getElementById("myIframe");
+	let endpoint = "http://awsohgplanparser-env.eba-hp7zgryw.us-east-1.elasticbeanstalk.com/new_plan";
+
+	// define parameters
+	let name = "Christopher";
+	let groups = "10.1;Jahrgang%2010";
+	let plan = "|Str_M_N4|Str_M_N4|Dt_D_N4|Swi_Pol_N4|Sh%C3%BC_E_N4;Sab_Spr_N4|Gn_Ek_N4|Hg_Ku_Ku2|Hg_Ku_Ku2|Dp_Ge_N4;No_Ph_P%C3%9C%7CStr_M_N4|Rt_RuW_N4|Dt_Mu_Mu1|Swi_Pol_N4;No_Ph_Nat|Str_M_N4|Sab_Spr_N4|Sab_Spr_N4|Mk_Bi_B%C3%9C1|Mk_Ch_C%C3%9C1;Dt_Mu_Mu1|Dt_D_N4|Dp_Ge_N4|Mk_Ch_C%C3%9C1|Mk_Bi_B%C3%9C2";
+	let start_mondays = "false";
+
+	// buidl full url
+	let adsURL = endpoint + "?name="          + name +
+				 "&groups="        + groups +
+				 "&plan="          + plan +
+				 "&start_mondays=" + start_mondays;
+
+	myIframe.src = adsURL;
+</script>
+    
+</html>
+
