@@ -1,10 +1,11 @@
 import datetime
-from flask import render_template, redirect, url_for, jsonify, request
-from flask_login import current_user, login_required
+from flask import render_template, redirect, url_for, request
+from flask_login import current_user
 from app import db
 from app.main import bp
 from app.models import Visitors
 import plan_parser
+import random
 
 
 # save last seen time
@@ -105,6 +106,28 @@ def new_plan_link_creator():
 # get new plan for named groups
 @bp.route("/new_plan")
 def new_plan():
+    # list of every german weekday (excluding weekends)
+    weekdays = [
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag"
+    ]
+
+    # list with the times of each period
+    times = [
+        ("07:50", "08:40"),
+        ("08:45", "09:35"),
+        ("09:40", "10:30"),
+        ("10:35", "11:25"),
+        ("11:30", "12:20"),
+        ("12:25", "13:15"),
+        ("13:20", "14:10"),
+        ("14:15", "15:05"),
+        ("15:10", "16:00"),
+        ("16:05", "16:55"),
+    ]
 
     ################################
     # extract and verify variables #
@@ -112,6 +135,10 @@ def new_plan():
 
     # False when the supplied values don't make sense
     ok = True
+    name = ""
+    groups = []
+    # final original plan, one entry per day in each week
+    plan = []
 
     # get variables
     start_mondays = True if request.args.get("start_mondays") == "true" else False
@@ -128,8 +155,6 @@ def new_plan():
         # cut at day breaks and period breaks -> two dimensional list
         plan_days = [plan_day.split("|") for plan_day in plan_days_raw.split(";")]
 
-        # final original plan, one entry per day in each week
-        plan = []
         # when there isn't one entry for each day in the week or the groups data is faulty
         if len(plan_days) != 5 or not groups:
             ok = False
@@ -168,6 +193,9 @@ def new_plan():
 
     # get dict with text and date of each day
     days_raw = plan_parser.get_raw()
+
+    if len(days_raw) == 0:
+        return "IServ failure"
 
     # last day from the "Vertretungsplan"
     last_day = datetime.date.fromisoformat(days_raw[0]["date"])
@@ -256,29 +284,6 @@ def new_plan():
         if current_day >= last_day and len(used_weekdays) >= 5:
             break
 
-    # list of every german weekday (excluding weekends)
-    weekdays = [
-        "Montag",
-        "Dienstag",
-        "Mittwoch",
-        "Donnerstag",
-        "Freitag"
-    ]
-
-    # list with the times of each period
-    times = [
-        ("07:50", "08:40"),
-        ("08:45", "09:35"),
-        ("09:40", "10:30"),
-        ("10:35", "11:25"),
-        ("11:30", "12:20"),
-        ("12:25", "13:15"),
-        ("13:20", "14:10"),
-        ("14:15", "15:05"),
-        ("15:10", "16:00"),
-        ("16:05", "16:55"),
-    ]
-
     # finally render
     return render_template("new_plan.html",
                            groups=", ".join(groups),
@@ -289,3 +294,20 @@ def new_plan():
                            weekdays=weekdays,
                            periods=range(0, len(new_table[0]["table"])),
                            times=times)
+
+
+# get new plan for named groups
+@bp.route("/good_morning")
+def good_morning():
+    # seed random generator
+    date = datetime.date.today().__str__()
+    random.seed(date)
+
+    nouns = []
+    with open("nouns.txt", "r", encoding="utf-8") as file:
+        for i in file.read().split("\n"):
+            if i.strip() != "":
+                nouns.append(i.strip())
+
+    noun = random.sample(nouns, 1)[-1]
+    return f"Good morning, {noun}!"

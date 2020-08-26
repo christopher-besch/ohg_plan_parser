@@ -1,9 +1,4 @@
-2020-06-04 07:22:18,054 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-04 07:22:49,390 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 21:47:51,233 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 21:59:46,153 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:03:21,729 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:03:24,994 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+2020-08-26 09:18:59,804 ERROR: Exception on /good_morning [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,58 +12,7 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 216, in new_plan
-    current_day -= datetime.timedelta(days=1)
-OverflowError: date value out of range
-2020-06-11 22:03:54,957 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:03:57,627 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 216, in new_plan
-    current_day -= datetime.timedelta(days=1)
-OverflowError: date value out of range
-2020-06-11 22:04:04,895 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:10:46,439 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:12:17,723 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:13:27,467 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:14:01,539 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:16:00,729 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:16:50,400 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:18:44,550 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:20:01,396 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:20:48,697 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:23:48,681 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:25:03,151 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:25:16,604 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:25:33,901 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:26:12,730 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:26:49,239 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:28:00,608 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:28:33,919 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:29:13,293 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:29:46,941 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:30:15,233 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:30:30,390 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:31:03,298 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:32:37,532 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:33:17,169 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:34:42,958 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:36:10,224 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:36:35,926 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:37:49,698 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:38:36,892 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:38:54,978 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-11 22:39:45,415 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-27 12:12:16,339 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-27 13:06:14,362 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 307, in good_morning
+    with open("nouns.txt", "r", encoding="utf-8") as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'nouns.txt'
+2020-08-26 09:19:26,225 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]

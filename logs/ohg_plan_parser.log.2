@@ -1,4 +1,4 @@
-2020-06-01 15:12:01,743 ERROR: Exception on /new_plan_link_creator [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
+2020-06-01 16:15:30,574 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 133, in new_plan_link_creator
-    return render_template("new_plan_link_creator.html", groups=groups, name=name, plan=list(zip(*plan)))
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 151, in new_plan
+    return render_template("new_plan_faulty_url.html")
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\templating.py", line 120, in _render
@@ -24,7 +24,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_link_creator.html", line 2, in top-level template code
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_faulty_url.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\Stromel\Data\ohg_plan_parser\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -34,10 +34,12 @@ Traceback (most recent call last):
     {%- block html %}
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
     {% block body -%}
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 26, in block "body"
-    {% block scripts %}
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_link_creator.html", line 162, in block "scripts"
-    let url = {{ url_for('new_plan') }}
+  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\templates\base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\templates\new_plan_faulty_url.html", line 6, in block "app_content"
+    <p>Die in die URL integrierten Variablen sind nicht nutzbar. Eine nutzbare URL kann <a href="{{ url_for("new_plan_link_creator") }}">hier</a> erstellt werden.</p>
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
@@ -48,59 +50,51 @@ Traceback (most recent call last):
     rv = url_adapter.build(
   File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\werkzeug\routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'new_plan'. Did you mean 'main.new_plan' instead?
-2020-06-01 15:12:11,620 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:12:34,505 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:28:31,364 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:31:14,516 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:31:42,593 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:33:13,019 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:34:19,657 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:35:21,231 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:39:38,844 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:39:54,366 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:41:18,466 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:42:16,438 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:43:44,747 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:48:06,100 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:49:08,928 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:53:32,705 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:54:06,305 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 15:56:47,690 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 16:10:44,733 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 16:10:53,042 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 107, in new_plan
-    groups = request.args.get("groups").split(";")
-AttributeError: 'NoneType' object has no attribute 'split'
-2020-06-01 16:14:07,238 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
-2020-06-01 16:14:07,880 ERROR: Exception on /new_plan [GET] [in C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Stromel\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Stromel\Data\ohg_plan_parser\app\main\routes_main.py", line 120, in new_plan
-    if len(plan_days) != 5 or not groups or ok:
-UnboundLocalError: local variable 'plan_days' referenced before assignment
-2020-06-01 16:15:29,826 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+werkzeug.routing.BuildError: Could not build url for endpoint 'new_plan_link_creator'. Did you mean 'main.new_plan_link_creator' instead?
+2020-06-01 16:16:17,228 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:16:42,659 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:19:09,661 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:22:04,013 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:22:16,855 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:22:31,544 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:22:59,076 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:23:49,546 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:26:27,650 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:26:35,975 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:28:46,786 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:36:08,536 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:36:42,131 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:53:46,449 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-01 16:57:37,295 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:41:56,148 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:44:56,406 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:45:41,189 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:46:44,868 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:47:09,483 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:48:16,315 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:49:11,901 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 06:49:43,241 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 18:07:38,876 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-03 18:08:55,490 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:03:29,858 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:06:56,443 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:07:06,786 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:07:49,300 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:07:57,503 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:08:48,722 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:09:28,811 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:09:46,514 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:10:21,873 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:10:34,873 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:11:00,278 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:11:20,623 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:11:30,817 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:12:14,854 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:12:25,313 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:12:31,055 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:13:07,295 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:13:16,420 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:13:32,759 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:18:52,462 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:21:01,352 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
+2020-06-04 07:22:06,169 INFO: ohg_plan_parser startup [in C:\Users\Stromel\Data\ohg_plan_parser\app\__init__.py:56]
